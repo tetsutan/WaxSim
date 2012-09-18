@@ -10,6 +10,7 @@
 		048274F11126398C003DFACB /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048274F01126398C003DFACB /* AppKit.framework */; };
 		048275B2112639B7003DFACB /* Simulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 048275B1112639B7003DFACB /* Simulator.m */; };
 		048275C011263A74003DFACB /* iPhoneSimulatorRemoteClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048275BF11263A74003DFACB /* iPhoneSimulatorRemoteClient.framework */; };
+		2B2478EA1608572700A5F6D2 /* DevToolsFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2478E91608572700A5F6D2 /* DevToolsFoundation.framework */; };
 		8DD76F9A0486AA7600D96B5E /* WaxSim.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* WaxSim.m */; settings = {ATTRIBUTES = (); }; };
 		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
 		A8BC32E4139825EB00BDDB2A /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8BC32E3139825EA00BDDB2A /* QTKit.framework */; };
@@ -35,6 +36,7 @@
 		048275BF11263A74003DFACB /* iPhoneSimulatorRemoteClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iPhoneSimulatorRemoteClient.framework; path = Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/iPhoneSimulatorRemoteClient.framework; sourceTree = DEVELOPER_DIR; };
 		08FB7796FE84155DC02AAC07 /* WaxSim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaxSim.m; sourceTree = "<group>"; };
 		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2B2478E91608572700A5F6D2 /* DevToolsFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DevToolsFoundation.framework; path = ../OtherFrameworks/DevToolsFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		32A70AAB03705E1F00C91783 /* WaxSim_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaxSim_Prefix.pch; sourceTree = "<group>"; };
 		8DD76FA10486AA7600D96B5E /* waxsim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = waxsim; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8BC32E3139825EA00BDDB2A /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
@@ -49,6 +51,7 @@
 				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
 				048274F11126398C003DFACB /* AppKit.framework in Frameworks */,
 				048275C011263A74003DFACB /* iPhoneSimulatorRemoteClient.framework in Frameworks */,
+				2B2478EA1608572700A5F6D2 /* DevToolsFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2B2478E91608572700A5F6D2 /* DevToolsFoundation.framework */,
 				048275BF11263A74003DFACB /* iPhoneSimulatorRemoteClient.framework */,
 				048274F01126398C003DFACB /* AppKit.framework */,
 				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
@@ -159,6 +163,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks\"",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/OtherFrameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -168,7 +173,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WaxSim_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
-				LD_RUNPATH_SEARCH_PATHS = /Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks;
+				LD_RUNPATH_SEARCH_PATHS = "$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks \"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/OtherFrameworks\"";
 				PRODUCT_NAME = waxsim;
 			};
 			name = Debug;
@@ -181,13 +186,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks\"",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/OtherFrameworks\"",
 				);
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WaxSim_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
-				LD_RUNPATH_SEARCH_PATHS = /Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks;
+				LD_RUNPATH_SEARCH_PATHS = "$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks \"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/OtherFrameworks\"";
 				PRODUCT_NAME = waxsim;
 			};
 			name = Release;
