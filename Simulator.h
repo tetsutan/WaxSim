@@ -25,6 +25,7 @@
 }
 
 @property (nonatomic, readonly) DTiPhoneSimulatorSession* session;
+@property (atomic, assign) BOOL launched;
 
 + (NSArray *)availableSDKs;
 

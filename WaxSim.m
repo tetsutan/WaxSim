@@ -87,7 +87,17 @@ int main(int argc, char *argv[]) {
     Simulator *simulator = [[Simulator alloc] initWithAppPath:appPathString sdk:sdkString family:familyString video:videoPathString env:environment args:additionalArgs];
     [simulator launch];
 
-    [[NSRunLoop mainRunLoop] run];
+    if(videoPath != nil){
+      [[NSRunLoop mainRunLoop] run];
+    }
+    else {
+
+      // run application only
+      while (simulator.launched == NO) {
+        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.5f]]; //0.5秒
+      }
+
+    }
     return 0;
 }
 

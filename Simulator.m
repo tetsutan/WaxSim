@@ -18,6 +18,7 @@
 @implementation Simulator
 
 @synthesize session=_session;
+@synthesize launched;
 
 - (id)initWithAppPath:(NSString *)appPath sdk:(NSString *)sdk family:(NSString *)family video:(NSString *)videoPath env:(NSDictionary *)env args:(NSArray *)args;
 {
@@ -59,6 +60,8 @@
 	_env = [env retain];
 	_args = [args retain];
     _videoPath = [videoPath retain];
+
+    self.launched = NO;
 
     return self;
 }
@@ -146,6 +149,8 @@
     }
     
     if (!_videoPath) {
+        WaxLog(@"Did start");
+        self.launched = YES;
         return;
     }
     
